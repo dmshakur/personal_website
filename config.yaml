@@ -1,0 +1,15 @@
+title: D'angelo Shakur portfolio
+nav:
+  - name: 'Student mental health analysis'
+    url: '/student_mental_health.html'
+  - name: 'Spotify data analysis'
+    url: '/spotify_data_analysis.html'
+  - name: 'Ultra marathons data analysis'
+    url: '/ultra_marathons_data_analysis.html'
+  - name: 'Indian food data analysis'
+    url: '/indian_food_data_analysis.html'
+  - name: 'Audio library organizer'
+    url: '/audio_library_organizer.html'
+sections:
+  - name: 'Audio library organizer'
+    content: 'Content here'

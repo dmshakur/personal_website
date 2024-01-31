@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>D. Shakur Home</title>
+{% endblock %}
+
+{% block body %}
+<h1>D'angelo Shakur</h1>
+<div class="section">
+        <img id="profile_pic" src="{{ url_for('static', filename='assets/dangelo_profile.jpg') }}" alt="dangelo profile picture">
+</div>
+<div class="section">
+    <h3>About me:</h3>
+    <p id="about_me">
+    What about me!?
+    </p>
+</div>
+<div id="personal_information" class="section">
+    <h3>Connect with me:</h3>
+    <div>
+    <ul id="connect_with_me">
+        <li>
+            <a href="mailto:yourname@example.com"><i class="fas fa-envelope"></i>Email me</a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/d-angelo-shakur-ab71b52a3" target="_blank"><i class="fab fa-linkedin"></i>Connect on LinkedIn</a>
+        </li>
+        <li>
+            <a href="https://github.com/dmshakur" target="_blank"><i class="fab fa-github"></i>My GitHub</a>
+        </li>
+        <!--<li>
+            <a href="https://leetcode.com/dmshakur" target="_blank">LeetCode</a>
+        </li>-->
+        <li>
+            <a href="https://www.hackerrank.com/dangeloshakur" target="_blank"><i class="fab fa-hackerrank"></i>My HackerRank</a>
+        </li>
+        <li>
+            <a href="https://www.kaggle.com/dsultra" target="_blank"><i class="fab fa-kaggle"></i>My Kaggle profile</a>
+        </li>
+    </ul>
+    </div>
+</div>
+<div class="section">
+    <h3>Skills and tools I use:</h3>
+    <div id="skills">
+        {% for skill in ["Python", "Matplotlib", "Seaborn", "Numpy", "Jupyter Notebooks", "Pandas", "SQL", "Dash", "Flask", "Mutagen", "Sci-kit learn"] %}
+            <div class="skill">{{ skill }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% for section in config.sections %}
+<div class ="section">
+    <h3>{{ section.title }}</h3>
+    <p>{{ section.content }}</p>
+</div>
+{% endfor %}
+{% endblock %}
