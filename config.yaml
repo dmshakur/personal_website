@@ -1,15 +1,51 @@
-title: D'angelo Shakur portfolio
-nav:
-  - name: 'Student mental health analysis'
-    url: '/student_mental_health.html'
-  - name: 'Spotify data analysis'
-    url: '/spotify_data_analysis.html'
-  - name: 'Ultra marathons data analysis'
-    url: '/ultra_marathons_data_analysis.html'
-  - name: 'Indian food data analysis'
-    url: '/indian_food_data_analysis.html'
-  - name: 'Audio library organizer'
-    url: '/audio_library_organizer.html'
+title: Dangelo Shakur portfolio
 sections:
-  - name: 'Audio library organizer'
-    content: 'Content here'
+
+  - name: Student mental health data analysis
+    url: /student_mental_health_data_analysis
+    github_data:
+      - notebooks: [student_mental_health_data_analysis.ipynb]
+        repo_name: student_mental_health_data_analysis
+        branch: main
+        raw_file_display: False
+        dashboard: True
+        dashboard_url: nada
+
+  - name: Spotify data analysis
+    url: /spotify_data_analysis
+    github_data:
+      - notebooks: [notebooks/data_processing.ipynb, notebooks/data_analysis.ipynb]
+        repo_name: spotify_data_analysis
+        branch: main
+        raw_file_display: False
+        dashboard: True
+        dashboard_url: nada
+
+  - name: Ultra marathons data analysis
+    url: /ultra_marathons_data_analysis
+    github_data:
+      - notebooks: [notebooks/data_processing.ipynb, notebooks/data_analysis.ipynb]
+        repo_name: ultra_marathons_data_analysis
+        branch: master
+        raw_file_display: False
+        dashboard: True
+        dashboard_url: nada
+              
+  - name: Indian food data analysis
+    url: /indian_food_data_analysis
+    github_data:
+      - notebooks: [notebooks/data_processing.ipynb, notebooks/data_analysis.ipynb]
+        repo_name: indian_food_data_analysis
+        branch: master
+        raw_file_display: False
+        dashboard: True
+        dashboard_url: nada
+            
+  - name: Audio library organizer
+    url: /audio_library_organizer
+    github_data:
+      - repo_name: audio_library_organizer
+        branch: master
+        files: [audio_library_organizer.py]
+        raw_file_display: True
+        dashboard: False

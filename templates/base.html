@@ -12,22 +12,26 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <header>
-    <h1>Projects</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Projects</a>
-                    <div class="dropdown-content">
-                        {% for item in config.nav %}
-                        <a href="{{ item.url }}">{{ item.name }}</a>
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    {% block body %}{% endblock %}
+    <div class="container">
+        <header class="header">
+            <div class="subheader">
+                <h3 class="name">D'angelo Shakur</h3>
+                <h3 id="home-button">
+                    <a class="home-button" href="/">
+                        <i class="fas fa-home"></i>Home
+                    </a>
+                </h3>
+            </div>
+            {% if include_child_template %}
+            <div class="subheader">
+                {% include 'child_template.html' %}
+            </div>
+            {% endif %}
+        </header>
+    </div>
+    <div class="main-content">
+        {% block primary_content %}
+        {% endblock %}
+    </div>
 </body>
 </html>
