@@ -193,7 +193,14 @@ a:hover, a:focus {
 #home-button {
     text-align: center;
 }
-
+.project-buttons {
+    text-decoration: none;
+    color: black;
+    border-radius: 5px; /* Rounded corners */
+}
+.project-button-hl {
+    background-color: lightblue;
+}
 @media (max-width: 1200px) {
     .container, .section {
         flex-direction: row;
