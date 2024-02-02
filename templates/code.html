@@ -1,0 +1,19 @@
+<div>
+{% if github_data.raw_file_display %}
+Display raw file here.
+{% for file in github_data.files %}
+file
+{% endfor %}
+{% else %}
+    {% for notebook_name in github_data.notebooks %}
+    <!--
+    <p>https://nbviewer.jupyter.org/github/dmshakur/{{ github_data.repo_name }}/blob/{{ github_data.branch }}/{{ notebook_name }}</p>
+    -->
+    <iframe
+        src="https://nbviewer.jupyter.org/github/dmshakur/{{ github_data.repo_name }}/blob/main/{{ notebook_name }}" 
+        width="100%" 
+        height="400px">
+    </iframe>
+    {% endfor %}
+{% endif %}
+</div>

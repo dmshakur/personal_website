@@ -9,21 +9,49 @@
 
 {% block primary_content %}
 <h4 class="project-name">{{ project_name }}</h4>
-<div>
-    {% if github_data.raw_file_display %}
-    Display raw file here.
-    {% for file in github_data.files %}
-    file
-    {% endfor %}
-    {% else %}
-        {% for notebook_name in github_data.notebooks %}
-        <p>https://nbviewer.jupyter.org/github/dmshakur/{{ github_data.repo_name }}/blob/{{ github_data.branch }}/{{ notebook_name }}</p>
-        <iframe
-            src="https://nbviewer.jupyter.org/github/dmshakur/{{ github_data.repo_name }}/blob/main/{{ notebook_name }}" 
-            width="100%" 
-            height="400px">
-        </iframe>
-        {% endfor %}
-    {% endif %}
+<div id="project-view">
+
+    {% include 'readme.html' %}
+    {{ github_data|tojson }}
+    <script>
+        $(document).ready(function() {
+        $("#readme").click(function(){
+            $.ajax({
+                url: "/readme",
+                type: "GET",
+                data: { github_data: JSON.stringify({{ github_data|tojson }}) },
+                dataType: 'html',
+                success: function(response) {
+                    $("#project-view").html(response);
+                }
+            });
+        });        
+
+        $("#dashboard").click(function(){
+            $.ajax({
+                url: "/dashboard",
+                type: "GET",
+                data: { github_data: JSON.stringify({{ github_data|tojson }}) },
+                dataType: 'html',
+                success: function(response) {
+                    $("#project-view").html(response);
+                }
+            });
+        });
+
+        $("#code").click(function(){
+            $.ajax({
+                url: "/code",
+                type: "GET",
+                data: { github_data: JSON.stringify({{ github_data|tojson }}) },
+                dataType: 'html',
+                success: function(response) {
+                    $("#project-view").html(response);
+                }
+            });
+        });
+        });
+    </script>
+
 </div>
 {% endblock %}

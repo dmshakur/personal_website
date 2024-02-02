@@ -1,5 +1,5 @@
 from ast import literal_eval as str_to_dict
-import yaml
+import yaml, json
 
 from flask import Flask, render_template, request
 
@@ -9,7 +9,7 @@ app = Flask(__name__)
 with open('config.yaml', 'r') as file:
     config = yaml.safe_load(file)
 
-
+print('type of config: ', type(config))
 
 @app.route('/')
 def index():
@@ -36,7 +36,32 @@ def open_project_view(project_url):
         github_data = github_data
     )
 
+@app.route('/readme')
+def readme():
+    github_data = request.args.get('github_data')
+    github_data = json.loads(github_data)
+    return render_template(
+        'readme.html',
+        github_data = github_data
+    )
 
+@app.route('/dashboard')
+def dashboard():
+    github_data = request.args.get('github_data')
+    github_data = json.loads(github_data)
+    return render_template(
+        'dashboard.html',
+        github_data = github_data
+    )
+
+@app.route('/code')
+def code():
+    github_data = request.args.get('github_data')
+    github_data = json.loads(github_data)
+    return render_template(
+        'code.html',
+        github_data = github_data
+    )
 
 @app.after_request
 def add_header(response):
