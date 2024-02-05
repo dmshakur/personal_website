@@ -3,3 +3,4 @@ __pycache__
 static/data_projects
 flask_app
 flask_app.pub
+dash

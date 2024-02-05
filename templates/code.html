@@ -1,15 +1,12 @@
 <div>
-{% if github_data.raw_file_display %}
-    {% for file in github_data.files %}
-    
-    {% endfor %}
-{% else %}
     {% for notebook_name in github_data.notebooks %}
+    <h5>Notebook: {{ notebook_name }}</h5>
+    <hr>
     <iframe
         src="https://nbviewer.jupyter.org/github/dmshakur/{{ github_data.repo_name }}/blob/main/{{ notebook_name }}" 
         width="100%" 
         height="800px">
     </iframe>
+    <hr>
     {% endfor %}
-{% endif %}
 </div>
