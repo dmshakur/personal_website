@@ -14,7 +14,7 @@
 <div class="section">
     <h3>About me:</h3>
     <p id="about_me">
-        I am from the United States, and I am currently looking for work in a data centric role. I have experience with data analysis, and some software engineering and web development. 
+        I am from the United States, and I am currently looking for work in a data centric role. I have experience with data analysis, some software engineering and web development. 
     </p>
 </div>
 
@@ -59,7 +59,7 @@
     </p>
 </div>
 {% for section in config.sections %}
-<div class ="section">
+<div class ="section project">
     <h3>
         <a href="{{ url_for('open_project_view', project_url=section.url, project_name=section.name, github_data=section.github_data) }}">{{ section.name }}</a>
     </h3>
