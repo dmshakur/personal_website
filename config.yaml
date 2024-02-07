@@ -49,3 +49,12 @@ sections:
         files: [audio_library_organizer.py]
         raw_file_display: True
         dashboard: False
+            
+  - name: Personal website
+    url: /personal_website
+    github_data:
+      - repo_name: /personal_website
+        branch: main
+        files: [app.py, config.yaml, templates/index.html]
+        raw_file_display: True
+        dashboard: False
