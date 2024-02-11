@@ -1,4 +1,5 @@
 from ast import literal_eval as str_to_dict
+from importlib import import_module
 import json
 import yaml
 
@@ -55,12 +56,19 @@ def readme():
 
 @app.route('/dashboard')
 def dashboard():
-    github_data = request.args.get('github_data')
-    github_data = json.loads(github_data)
+    github_data  = request.args.get('github_data')
+    repo_name = json.loads(github_data)["repo_name"]
+
+    module_path = f'dashboards.{repo_name}.{repo_name}_dashboard'
+    dash_module = import_module(module_path)
+    dash_app = dash_module.dash_app
+
+
     return render_template(
         'dashboard.html',
-        github_data = github_data
+        dash_app = dash_app
     )
+
 
 @app.route('/code')
 def code():
@@ -95,6 +103,8 @@ def code():
         'code.html',
         github_data = github_data
     )
+
+
 
 @app.after_request
 def add_header(response):

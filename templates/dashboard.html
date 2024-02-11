@@ -1,1 +1,14 @@
-<h2>This page is currently a work in progress</h2>
+<div id="dash-container">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- Include Dash JavaScript bundle -->
+<script src="http://cdn.dashjs.org/v4.6.0/dash.all.min.js"></script>
+
+<!-- Include Dash app script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const dashApp = {{ dash_app|safe }};
+            dashApp.render('#dash-container');
+    });
+</script>
